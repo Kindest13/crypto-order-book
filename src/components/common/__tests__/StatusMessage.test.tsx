@@ -5,7 +5,7 @@ import { act } from "react"
 jest.useFakeTimers()
 
 describe("StatusMessage", () => {
-  it("renders success message", () => {
+  it("should render success message", () => {
     render(
       <StatusMessage status="success" message="Saved!" onClose={jest.fn()} />
     )
@@ -15,7 +15,7 @@ describe("StatusMessage", () => {
     expect(element.className).toMatch(/green/)
   })
 
-  it("renders error message", () => {
+  it("should render error message", () => {
     render(
       <StatusMessage status="error" message="Failed" onClose={jest.fn()} />
     )
@@ -25,7 +25,7 @@ describe("StatusMessage", () => {
     expect(element.className).toMatch(/red/)
   })
 
-  it("calls onClose after 4 seconds", () => {
+  it("should call onClose after 4 seconds", () => {
     const onClose = jest.fn()
 
     render(
@@ -39,7 +39,7 @@ describe("StatusMessage", () => {
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 
-  it("clears timeout on unmount", () => {
+  it("should clear timeout on unmount", () => {
     const onClose = jest.fn()
 
     const { unmount } = render(

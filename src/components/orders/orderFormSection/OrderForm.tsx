@@ -67,7 +67,7 @@ export const OrderForm: FC<Props> = ({
   }, [shouldAutoSubmit])
 
   useEffect(() => {
-    if (type === "market" || selectedOrder == null) {
+    if (type === "market" || selectedOrder === null) {
       setPrice(Number(currentPrice).toFixed(2))
     }
   }, [activePair, currentPrice, side, type, selectedOrder])
